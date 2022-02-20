@@ -1,6 +1,3 @@
-var async = require("async");
-
-
 // required dom elements
 const messageEl = document.getElementById('texts');
 const answerEl = document.getElementById('answer')
@@ -147,18 +144,21 @@ rxns.set(
   new RxnTemplate("Funds added.")
 )
 rxns.set(
-  /transfer [0-9]+ dollars to (.*)/,
+  /transfer ?[0-9]+ dollars to (.*)/,
   new RxnTemplate("Funds transferred", (text) => {
 
     alert("Transfer successful")
   })
 )
 
-async.forever(run, (err) => {
-  console.log("Error: " + err);
-  alert("An error has occurred.")
-})
+async function bot() {
+  while(true) { 
+    await run()
+  }
+}
 
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
+
+bot()
