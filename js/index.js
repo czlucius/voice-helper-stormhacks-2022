@@ -1,3 +1,8 @@
+// close banner interaction button
+document.querySelector(".banner__close").addEventListener("click", function () {
+  this.closest(".banner").style.display = "none";
+});
+
 // required dom elements
 const messageEl = document.getElementById('texts');
 const answerEl = document.getElementById('answer')
@@ -200,3 +205,5 @@ async function bot() {
   }
 }
 bot()
+
+
