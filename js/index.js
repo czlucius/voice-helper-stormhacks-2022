@@ -5,7 +5,8 @@ document.querySelector(".banner__close").addEventListener("click", function () {
 
 // required dom elements
 const messageEl = document.getElementById('texts');
-const answerEl = document.getElementById('answer')
+const answerEl = document.getElementById('answer');
+const clearBtn = document.getElementById('clear');
 
 // set initial state of application variables
 messageEl.style.display = 'none';
@@ -109,7 +110,11 @@ const run = async () => {
   
 };
 
-//checks to see if audio is present, runs the program if true 
+clearBtn.onclick = () => {
+  limitSupport = 1
+  renderMsg("")
+  renderAns("")
+}
 
 
 
