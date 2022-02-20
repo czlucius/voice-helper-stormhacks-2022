@@ -182,7 +182,7 @@ rxns.set(
 
 rxns.set(
   /((hello|hi) ?(there)?)\.?/,
-  new RxnTemplate("Welcome to HSFBC! How can I help?")
+  new RxnTemplate("Welcome to ASFBC! How can I help?")
 )
 
 
