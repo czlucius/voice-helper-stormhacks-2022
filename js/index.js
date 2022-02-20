@@ -180,6 +180,7 @@ rxns.set(
     (text) => {
 
       matchList = text.match(/(how )?((do I)|(to))? ?deposit a? ?(cheque|check)\??\.?/)
+      console.log(matchList)
       if (matchList.length > limitCheck) {
         openWebPage("https://www.hsbc.ca/support/mobile-cheque-deposit/")
         limitCheck += 1
