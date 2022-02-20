@@ -182,7 +182,7 @@ rxns.set(
       matchList = text.match(/(how )?((do I)|(to))? ?deposit a? ?(cheque|check)\??\.?/)
       if (matchList.length > limitCheck) {
         openWebPage("https://www.hsbc.ca/support/mobile-cheque-deposit/")
-        limitCheck = matchList.length + 1
+        limitCheck += 1
       }
     }
   )
@@ -197,7 +197,7 @@ rxns.set(
 rxns.set(
   /(how )?((do I)|(to))? ?(get (more)? ?)?support\??.?/,
   new RxnTemplate(
-    "You can visit our support page. You will be redirected shortly.",
+    "You can visit support page of a bank. You will be redirected shortly.",
     (text) => {
       
       if (text.match(/(how )?((do I)|(to))? ?(get (more)? ?)?support\??.?/).length <= limitSupport) {
