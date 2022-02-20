@@ -55,6 +55,8 @@ nav{
     color: var(--dark-0);
 }
 
+
+/*---------- main page section--------- */
 section{
     min-height: 80vh;
     width: 100%;
@@ -102,4 +104,87 @@ section p {
 
 .texts > p.replay{
     text-align: right;
+}
+
+button {
+    background: none;
+    border: 2px solid var(--white);
+    border-radius: 5px;
+    color: var(--white);
+    display: block;
+    font-size: 0.6rem;
+    font-weight: bold;
+    margin: 1em auto;
+    padding: 1em 2em;
+    position: relative;
+    text-transform: uppercase;
+}
+
+button::before, button::after {
+  background: var(--red-2);
+  content: '';
+  position: absolute;
+  z-index: -1;
+}
+
+button:hover {
+  color: var(--red-1);
+}
+
+/* .clear{
+    padding: 15px 100px;
+    margin:10px 4px;
+    background-color: var(--dark-grey);
+    color: #fff;
+    text-align: center;
+    position: relative;
+    text-decoration: none;
+    display:inline-block;
+} 
+
+.clear:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: #000;
+    -webkit-transform: scaleX(.3);
+    transform: scaleX(.3);
+    opacity: 0;
+    transition: all .3s
+}
+
+.clear:hover :before{
+    opacity: 1;
+    background-color: #6098FF;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+    transition: -webkit-transform .6s cubic-bezier(.08, .35, .13, 1.02), opacity .4s;
+    transition: transform .6s cubic-bezier(.08, .35, .13, 1.02), opacity
+}
+*/
+
+/*-------------- footer section--------------- */
+
+footer{
+    padding: 1.2em;
+    background-color: var(--dark-0);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-note {
+    font-size: 0.7rem;
+    text-align: center;
+    color: var(--white);
+    padding: 0.3rem 0.1rem;
+}
+
+.disclaimer{
+    font-size: 0.5rem;
 }
