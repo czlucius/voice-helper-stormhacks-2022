@@ -33,10 +33,15 @@ header{
     display: grid;
     background-color: var( --white );
 }
+
 nav{
     grid-template-columns: 1fr 1fr;
     background-color: var( --light-grey );
     padding:  0.5rem 2rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: left;
+    align-items: center;
 }
 
 .logo-img{
@@ -97,14 +102,4 @@ section p {
 
 .texts > p.replay{
     text-align: right;
-}
-
-nav{
-    grid-template-columns: 1fr 1fr;
-    background-color: var( --light-grey );
-    padding:  0.5rem 2rem;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: left;
-    align-items: center;
 }
