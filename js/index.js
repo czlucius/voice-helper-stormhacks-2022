@@ -112,7 +112,7 @@ function renderMsg(text) {
   messageEl.innerText = "You: " + text;
 }
 function renderAns(ans) {
-  answerEl.innerText = ans
+  answerEl.innerText = ans + "\n"
 }
 
 function analyzeAndRender(msg) {
@@ -128,6 +128,12 @@ function analyzeAndRender(msg) {
   }
 }
 
+function openWebPage(url) {
+  window.open(url, '_blank');
+}
+
+
+limitSupport = false
 
 
 
@@ -140,7 +146,7 @@ const RxnTemplate = function (response, func = (text) => {}) {
 const rxns = new Map();
 
 rxns.set(
-  /add \$[0-9]+ ?(dollars)?\.? ?(to my account)?/,
+  /add.? \$[0-9]+ ?(dollars)?\.? ?(to my account)?/,
   new RxnTemplate("Funds added.")
 )
 rxns.set(
@@ -151,14 +157,46 @@ rxns.set(
   })
 )
 
+rxns.set(
+  /(how )?((do I)|(to))? ?check my balance\??\.?/,
+  new RxnTemplate(
+    "Log on to see your list of accounts and their balances.\n\nYou seemed to have logged in...\nHere is your current balance $100,000.00",
+    (text) => {})
+)
+
+rxns.set(
+  /(how )?((do I)|(to))? ?deposit a? ?cheque\??\.?/,
+  new RxnTemplate(
+    "You will be redirected to a support page explaining how to deposit a cheque.",
+    (text) => {openWebPage("https://www.hsbc.ca/support/mobile-cheque-deposit/")}
+  )
+)
+
+rxns.set(
+  /((hello|hi) ?(there)?)\.?/,
+  new RxnTemplate("Welcome to HSFBC! How can I help?")
+)
+
+
+rxns.set(
+  /(how )?((do I)|(to))? ?(get (more)? ?)?support\??.?/,
+  new RxnTemplate(
+    "You can visit our support page. You will be redirected shortly.",
+    (text) => {
+      if (!limitSupport) {
+        openWebPage("https://www.hsbc.ca/support/")
+        limitSupport = true
+      }
+    }
+  )
+)
+
+
+
+
 async function bot() {
   while(true) { 
     await run()
   }
 }
-
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
-
 bot()
