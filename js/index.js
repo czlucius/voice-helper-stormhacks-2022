@@ -179,9 +179,10 @@ rxns.set(
     "You will be redirected to a support page explaining how to deposit a cheque.",
     (text) => {
 
-      if (text.match(/(how )?((do I)|(to))? ?deposit a? ?(cheque|check)\??\.?/) <= limitCheck) {
+      matchList = text.match(/(how )?((do I)|(to))? ?deposit a? ?(cheque|check)\??\.?/)
+      if (matchList.length <= limitCheck) {
         openWebPage("https://www.hsbc.ca/support/mobile-cheque-deposit/")
-        limitCheck += 1
+        limitCheck = matchList.length + 1
       }
     }
   )
