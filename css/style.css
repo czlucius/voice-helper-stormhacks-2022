@@ -25,19 +25,23 @@ html{
     font-size: 1.2rem;
 }
 
+body{
+    background-color: var( --dark-grey );
+}
+
 header{
     display: grid;
+    background-color: var( --white );
 }
 nav{
     grid-template-columns: 1fr 1fr;
     background-color: var( --light-grey );
-    padding: 1rem;
+    padding:  0.5rem 2rem;
 }
+
 .logo-img{
     justify-self: stretch;
 }
-
-
 
 .homepage{
     font-size: 2.5rem;
@@ -47,7 +51,7 @@ nav{
 }
 
 section{
-    min-height: 100vh;
+    min-height: 80vh;
     width: 100%;
     display: flex;
     align-items: center;
@@ -93,4 +97,14 @@ section p {
 
 .texts > p.replay{
     text-align: right;
+}
+
+nav{
+    grid-template-columns: 1fr 1fr;
+    background-color: var( --light-grey );
+    padding:  0.5rem 2rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: left;
+    align-items: center;
 }
