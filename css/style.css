@@ -59,7 +59,7 @@ nav{
 /*------------Banner section---------*/
 
 .banner {
-    background-color: var(--red-1);
+    background-color: var(--dark-1);
 }
   
 .banner__content {
