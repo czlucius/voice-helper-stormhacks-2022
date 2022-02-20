@@ -55,6 +55,35 @@ nav{
     color: var(--dark-0);
 }
 
+/*------------Banner section---------*/
+
+.banner {
+    background: var(--dark-1);
+}
+  
+.banner__content {
+    padding: 0.8rem;
+    max-width: 28vw;
+    font-size: 0.9rem;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+  
+.banner__text {
+    flex-grow: 1;
+    line-height: 1.4;
+}
+  
+.banner__close {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+  
+.banner__text, .banner__close > span {
+    color: var(--white);
+}
 
 /*---------- main page section--------- */
 section{
