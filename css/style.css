@@ -68,6 +68,7 @@ nav{
     margin: 0 auto;
     display: flex;
     align-items: center;
+    background-color: #EE4B2B
 }
   
 .banner__text {
