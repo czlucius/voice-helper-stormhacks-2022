@@ -55,6 +55,7 @@ nav{
     color: var(--dark-0);
 }
 
+
 /*------------Banner section---------*/
 
 .banner {
@@ -68,7 +69,6 @@ nav{
     margin: 0 auto;
     display: flex;
     align-items: center;
-    background-color: #EE4B2B
 }
   
 .banner__text {
@@ -181,7 +181,6 @@ button:hover {
 .clear:hover:after {
     width: 100%;
 }
-
 
 /*-------------- footer section--------------- */
 
