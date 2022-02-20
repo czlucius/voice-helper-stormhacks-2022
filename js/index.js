@@ -111,9 +111,7 @@ const run = async () => {
 };
 
 clearBtn.onclick = () => {
-  limitSupport = 1
-  renderMsg("")
-  renderAns("")
+   window.location.reload();
 }
 
 
