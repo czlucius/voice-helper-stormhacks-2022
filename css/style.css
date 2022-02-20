@@ -69,6 +69,7 @@ nav{
     margin: 0 auto;
     display: flex;
     align-items: center;
+    background: var(--dark-1);
 }
   
 .banner__text {
